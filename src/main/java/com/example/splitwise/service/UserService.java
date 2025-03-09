@@ -20,7 +20,6 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        System.out.println(user);
         return userRepository.save(user);
     }
 }
