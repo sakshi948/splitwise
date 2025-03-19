@@ -11,6 +11,6 @@ public class AddExpenseRequest {
     private Integer groupId;
     private Double amount;
     private Integer paidBy;
-    private List<Integer> members;
+    private List<Long> members;
     private String description;
 }

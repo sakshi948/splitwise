@@ -20,7 +20,7 @@ public class ExpenseTracker {
 
     private String description;
     private double amount;
-    private int paidBy;
-    private int owedBy;
+    private long paidBy;
+    private long owedBy;
     private int groupId;
 }

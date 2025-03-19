@@ -15,6 +15,6 @@ public class UserGroupController {
 
     @PostMapping
     public void joinGroup(@RequestBody JoinGroupRequest request) {
-        this.groupService.joinGroup(request.getGroupId(), request.getEmail());
+        this.groupService.joinGroup(request.getGroupId(), request.getUserId());
     }
 }

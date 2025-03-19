@@ -3,6 +3,9 @@ package com.example.splitwise.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -17,5 +20,9 @@ public class User {
     private String name;
     private String email;
     private String password;
-    private Integer groupId;
+
+    @ElementCollection
+    @CollectionTable(name = "user_group_ids", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "group_id")
+    private List<Integer> groupIds = new ArrayList<>();
 }

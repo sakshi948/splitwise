@@ -26,4 +26,9 @@ public class GroupController {
     public Group createUser(@RequestBody Group group) {
         return groupService.createGroup(group);
     }
+
+    @GetMapping("/get-group-by-email")
+    public List<Integer> getGroupByEmail(@RequestParam Long userId) {
+        return groupService.getGroupsByUserId(userId);
+    }
 }

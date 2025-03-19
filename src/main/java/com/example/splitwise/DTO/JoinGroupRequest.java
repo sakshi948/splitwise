@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class JoinGroupRequest {
     private Integer groupId;
-    private String email;
+    private Long userId;
 }
