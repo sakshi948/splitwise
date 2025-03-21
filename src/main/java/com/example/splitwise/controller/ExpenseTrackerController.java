@@ -1,12 +1,11 @@
 package com.example.splitwise.controller;
 
 import com.example.splitwise.DTO.AddExpenseRequest;
-import com.example.splitwise.models.ExpenseTracker;
 import com.example.splitwise.service.ExpenseTrackerService;
-import org.springframework.http.ResponseEntity;
+import com.example.splitwise.helper.Transaction;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+import java.util.List;
 
 @RestController
 @RequestMapping("/expense-tracker")
@@ -22,8 +21,8 @@ public class ExpenseTrackerController {
         expenseTrackerService.addExpense(addExpenseRequest.getGroupId(), addExpenseRequest.getAmount(), addExpenseRequest.getPaidBy(), addExpenseRequest.getMembers(), addExpenseRequest.getDescription());
     }
 
-    @GetMapping("/expense-per-person")
-    public HashMap<Long, Double> getExpensePerPerson(@RequestParam Integer groupId) {
-        return expenseTrackerService.getExpensePerPerson(groupId);
+    @GetMapping("/balance-per-person")
+    public List<Transaction> balancePerPerson() {
+        return expenseTrackerService.calculateBalancePerPerson();
     }
 }
